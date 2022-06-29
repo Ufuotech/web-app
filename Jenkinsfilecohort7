@@ -52,5 +52,10 @@ pipeline{
         emailext body: 'This is Build Success', subject: 'Build Success', to: 'info@acadalearning.com'
       }
     }
+    stage("9.SlackNotification"){
+      steps{
+          slackSend channel: 'cohort-7_group-4', message: 'Build success "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"'
+      }
+    }
   }
 }
