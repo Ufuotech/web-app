@@ -14,8 +14,7 @@ pipeline{
         sh "mvn clean package"
       }
     }
-    /*
-    stage("3.CodeQuality"){
+        stage("3.CodeQuality"){
       steps{
         sh "mvn sonar:sonar"
       }
@@ -25,14 +24,11 @@ pipeline{
         sh "mvn deploy"
       }
     }
-    */
-    /*
     stage("5.DeploytoUAT"){
       steps{
         deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://23.20.107.224:8080/')], contextPath: null, war: 'target/*.war'
       }
     }
-    */
     stage("6.Approval"){
       steps{
         timeout(time:5, unit:'DAYS'){
@@ -40,13 +36,11 @@ pipeline{
       }
     }
   }
-  /*
-    stage("7.deploytoPROD"){
+   stage("7.deploytoPROD"){
       steps{
         deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://23.20.107.224:8080/')], contextPath: null, war: 'target/*.war'
       }
     }
-    */
     stage("8.EmailNotification"){
       steps{
         emailext body: 'This is Build Success', subject: 'Build Success', to: 'info@acadalearning.com'
