@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>ACADA Learning Snapshot Nexus Repository </name>
-	      <url>http://172.31.94.131:8081/repository/rbc-app-snapshot/</url>
+	      <url>http://172.31.94.131:8081/repository/sharedlib-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
