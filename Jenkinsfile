@@ -38,11 +38,13 @@ pipeline{
                sh "mvn package" 
            } 
        }
+        /*
        stage('3. Code Quality'){ 
            steps{ 
                sh "mvn sonar:sonar" 
            } 
        }
+       */
     stage('5. Approval'){
                 steps{
                     sh "echo Approval for BOA"
