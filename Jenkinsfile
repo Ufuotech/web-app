@@ -54,7 +54,7 @@ pipeline{
               stage('6.predeployment'){
         steps{
             sh "docker build -t ufuodock/cohort7:1 ."
-            sh "docker run --name cohort7 -d -p 2500:8080 ufuodock/cohort7:1"
+            sh "docker run --name group4 -d -p 2500:8080 ufuodock/cohort7:1"
         }
      }
     }
