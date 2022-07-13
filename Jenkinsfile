@@ -7,7 +7,7 @@
        sh "${MHD}/bin/mvn clean package"
  
     }
-    /*
+   
     stage('deploy'){
   sshagent(['tomcat']) {
   sh "scp -o StrictHostKeyChecking=no target/*war ec2-user@172.31.15.31:/opt/tomcat9/webapps/"
@@ -53,8 +53,8 @@ pipeline{
              }
               stage('6.predeployment'){
         steps{
-            sh "docker build -t ufuodock/cohort7 ."
-            sh "docker run --name cohort7 -d -p 2500:8080 ufuodock/cohort7"
+            sh "docker build -t ufuodock/cohort7:1 ."
+            sh "docker run --name cohort7 -d -p 2500:8080 ufuodock/cohort7:1"
         }
      }
     }
